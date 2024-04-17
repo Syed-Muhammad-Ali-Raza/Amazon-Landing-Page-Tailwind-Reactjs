@@ -8,8 +8,13 @@ import AddShoppingCart from '@mui/icons-material/AddShoppingCart';
 import ArrowDropDown from '@mui/icons-material/ArrowDropDown';
 
 const Header = () => {
-    const [showDropdown, setShowDropdown] = useState(false); // State to manage dropdown visibility
-    const [showRadioDropdown, setShowRadioDropdown] = useState(false); // State to manage dropdown visibility
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [showRadioDropdown, setShowRadioDropdown] = useState(false);
+    const [accountList, setaccountList] = useState(false);
+
+    const toggeAccountList = () => {
+        setaccountList(!accountList);
+    }
 
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
@@ -62,9 +67,9 @@ const Header = () => {
                         <li value="search-alias=software-intl-ship" className="px-3 py-1 hover:bg-gray-100 cursor-pointer">Software</li>
                         <li value="search-alias=sporting-intl-ship" className="px-3 py-1 hover:bg-gray-100 cursor-pointer">Sports & Outdoors</li>
                         <li value="search-alias=tools-intl-ship" className="px-3 py-1 hover:bg-gray-100 cursor-pointer">Tools & Home Improvement</li>
-                        <li value="search-alias=toys-and-games-intl-ship" className="px-3 py-1 hover:bg-gray-100 cursor-pointer">Toys & Games</li>
-                        <li value="search-alias=videogames-intl-ship" className="px-3 py-1 hover:bg-gray-100 cursor-pointer">Video Games</li>
-                        <li value="search-alias=fashion-womens-intl-ship" className="px-3 py-1 hover:bg-gray-100 cursor-pointer">Women's Fashion</li>
+                        <li value="search-alias=toys-and-games-intl-ship" className="px-3  hover:bg-gray-100 cursor-pointer">Toys & Games</li>
+                        <li value="search-alias=videogames-intl-ship" className="px-3  hover:bg-gray-100 cursor-pointer">Video Games</li>
+                        <li value="search-alias=fashion-womens-intl-ship" className="px-3  hover:bg-gray-100 cursor-pointer">Women's Fashion</li>
 
 
 
@@ -81,90 +86,163 @@ const Header = () => {
 
             <div className='flex items-center text-white relative'>
                 <p className='mr-4 hover:border-2 border-white cursor-pointer'>EN
-                    <span  className='' onClick={toggleRADIODropdown} onMouseEnter={toggleRADIODropdown} >
+                    <span className='' onClick={toggleRADIODropdown} onMouseEnter={toggleRADIODropdown} >
                         <ArrowDropDown />
                     </span>
                     {showRadioDropdown && (
-                        <ul className="absolute top-full left-0 bg-white text-black shadow-md py-2 mt-1 rounded-md h-[20rem] overflow-auto">
+                        <ul className="absolute top-full left-0 bg-white text-black shadow-md py-2 mt-1 rounded-md  ">
                             {/* Dropdown list items */}
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                            <div className='flex pb-2  px-3 gap-3'>
+
+                                <p className='text-sm'>Change Languages</p>
+                                <p className='underline text-xs text-blue-600'>Learn More</p>
+                            </div>
+
+
+                            <li className="px-3  hover:bg-gray-100 cursor-pointer">
                                 <label className="flex items-center">
                                     <input type="radio" name="language" value="english" className="mr-2" />
                                     English -EN
                                 </label>
+                                <hr className='mx-5 my-3  ' />
                             </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+
+                            <li className="px-3  hover:bg-gray-100 cursor-pointer">
                                 <label className="flex items-center">
                                     <input type="radio" name="language" value="spanish" className="mr-2" />
                                     Spanish -SN
                                 </label>
                             </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                            <li className="px-3  hover:bg-gray-100 cursor-pointer">
                                 <label className="flex items-center">
                                     <input type="radio" name="language" value="french" className="mr-2" />
                                     French -FN
                                 </label>
                             </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                            <li className="px-3  hover:bg-gray-100 cursor-pointer">
                                 <label className="flex items-center">
                                     <input type="radio" name="language" value="french" className="mr-2" />
                                     French -FN
                                 </label>
                             </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                            <li className="px-3  hover:bg-gray-100 cursor-pointer">
                                 <label className="flex items-center">
                                     <input type="radio" name="language" value="french" className="mr-2" />
                                     Cebuano -CN
-                                </label>
-                            </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
-                                <label className="flex items-center">
-                                    <input type="radio" name="language" value="french" className="mr-2" />
-                                    Cebuano -CN
-                                </label>
-                            </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
-                                <label className="flex items-center">
-                                    <input type="radio" name="language" value="french" className="mr-2" />
-                                    Chakma -CK
-                                </label>
-                            </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
-                                <label className="flex items-center">
-                                    <input type="radio" name="language" value="french" className="mr-2" />
-                                    Berber -Br
-                                </label>
-                            </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
-                                <label className="flex items-center">
-                                    <input type="radio" name="language" value="french" className="mr-2" />
-                                    Cebuano -CN
-                                </label>
-                            </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
-                                <label className="flex items-center">
-                                    <input type="radio" name="language" value="french" className="mr-2" />
-                                    Chakma -CK
-                                </label>
-                            </li>
-                            <li className="px-3 py-1 hover:bg-gray-100 cursor-pointer">
-                                <label className="flex items-center">
-                                    <input type="radio" name="language" value="french" className="mr-2" />
-                                    Berber -Br
                                 </label>
                             </li>
 
-                  
+                            <li className="px-3  hover:bg-gray-100 cursor-pointer">
+                                <label className="flex items-center">
+                                    <input type="radio" name="language" value="french" className="mr-2" />
+                                    Berber -Br
+                                </label>
+
+
+                            </li>
+                            <hr className='mx-5 my-3  ' />
+
+                            <div className='flex pb-2  px-3 gap-3'>
+
+                                <p className='text-sm'>Change Languages</p>
+                                <p className='underline text-xs text-blue-600'>Learn More</p>
+                            </div>
+                            <hr className='mx-5 my-3  ' />
+
+                            <div className='flex justify-between my-2 mx-2 text-sm'>
+                                <p>$ - USD - US Dollar</p>
+                                <p className='text-blue-600'>Change</p>
+                            </div>
+                            <p className='mx-2 text-sm my-2' > You are shopping on Amazon.com</p>
+                            <p className='text-blue-600 mx-2 text-sm text-center '>Change Country Region</p>
+
+
+
+
                         </ul>
 
                     )}
                 </p>
+                {/* toggeAccountList */}
 
 
-                <div className='flex flex-col mr-4 hover:border-2 border-white cursor-pointer'>
+                <div className='flex flex-col mr-4 hover:border-2 border-white cursor-pointer relative '>
                     <p className='font-thin text-sm'>Hello Sign in </p>
-                    <p className='font-bold '>Account & Lists <span ><ArrowDropDownIcon /></span></p>
+                    <p className='font-bold '>Account & Lists <span onMouseEnter={toggeAccountList} ><ArrowDropDownIcon /></span></p>
+
+                    {accountList && (
+                        <div className='absolute top-full  bg-white text-black shadow-md py-2 mt-1 rounded-md'>
+
+                            <div className='head flex flex-col justify-center item-center'>
+                                <button className='bg-yellow-300 mt-7 mx-16 text-black'>Sign in</button>
+                                <p className='text-xs text-black text-center  mt-1 mb-4'>
+                                    New Customer?
+                                    <span className='text-blue-600 text-xs'>Start Here</span>
+                                </p>
+                            </div>
+
+                            <div className='content flex  border-t-2 border-t-gray-200 '>
+                                <div className='text-black left'>
+                                    <h2 className='font-bold mx-3'>Your List</h2>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Create a List
+                                    </p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Find a List or Registry</p>
+
+                                </div>
+                                <div className='right text-black border-l-2 border-gray-200'>
+                                    <h2 className='font-bold mx-3'>
+                                        Your Account
+                                    </h2>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Account</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Orders</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Recommendations</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Browsing History</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Watchlist</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Video Purchases & Rentals</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Kindle Unlimited</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Content & Devices</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Subscribe & Save Items</p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Memberships & Subscriptions
+                                    </p>
+                                    <p className=' mx-3 my-1 hover:text-orange-500 hover:underline'>
+                                        Music Library
+                                    </p>
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    )
+
+                    }
+
+
+
                 </div>
+
+
+
+
+
 
                 <div className='flex flex-col mr-4 hover:border-2 border-white cursor-pointer'>
                     <p className='font-thin text-sm'>Returns </p>
