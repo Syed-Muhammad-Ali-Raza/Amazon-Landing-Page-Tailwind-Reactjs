@@ -35,7 +35,7 @@ const HeroSection = () => {
         </div>
 
         <div className='flex gap-1'>
-            <Cards/> <Cards/><Cards/><Cards/>
+            <Cards/>
         </div>
 
 
